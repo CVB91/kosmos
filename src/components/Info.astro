@@ -1,0 +1,38 @@
+---
+let {planetData} = Astro.props
+
+---
+
+     <div class="flex flex-col h-[550px] w-[350px] text-white space-y-5">
+          <h1 class="text-7xl font-antonio mb-5 p-2">{planetData[0].name}</h1>
+          <p class="mb-5 font-spartan text-[14px] leading-[25px] p-2">
+           {planetData[0].overview.content}
+          </p>
+          <p class="my-5 mb-6 p-2">{planetData[0].overview.source}</p>
+          <div class="flex flex-col w-[350px] h-[175px] space-y-5">
+            <div
+              class="flex items-center border w-full h-[50px] p-2 active:bg-secondary-bg hover:bg-tertiary-bg space-x-6"
+            >
+              <p>01</p>
+              <p>OVERVIEW</p>
+            </div>
+            <div
+              class="flex items-center border w-full h-[50px] p-2 active:bg-secondary-bg hover:bg-tertiary-bg space-x-6"
+            >
+              <p>02</p>
+              <p>INTERNAL STRUCTURE</p>
+            </div>
+            <div
+            id='geology'
+              class="flex items-center border w-full h-[50px] p-2 active:bg-secondary-bg hover:bg-tertiary-bg space-x-6"
+            >
+              <p>03</p>
+              <p>SURFACE GEOLOGY</p>
+            </div>
+          </div>
+        </div>
+
+        <script>
+        
+
+        </script>

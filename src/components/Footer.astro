@@ -1,0 +1,36 @@
+---
+const {planetData} = Astro.props
+---
+        <div
+          class="flex text-white flex-col h-[128px] w-[255px] items-center justify-center"
+        >
+          <p class="font-spartan text-[14px] leading-[25px]">ROTATION TIME</p>
+          <p class="font-antonio text-[40px] leading-[52px] -tracking-[1.5]">
+            {planetData[0].rotation}
+          </p>
+        </div>
+        <div
+          class="flex text-white flex-col h-[128px] w-[255px] items-center justify-center"
+        >
+          <p class="font-spartan text-[14px] leading-[25px]">REVOLUTION TIME</p>
+          <p class="font-antonio text-[40px] leading-[52px] -tracking-[1.5]">
+            {planetData[0].revolution}
+          </p>
+        </div>
+        <div
+          class="flex text-white flex-col h-[128px] w-[255px] items-center justify-center"
+        >
+          <p class="font-spartan text-[14px] leading-[25px]">RADIUS</p>
+          <p class="font-antonio text-[40px] leading-[52px] -tracking-[1.5]">
+            {planetData[0].radius}
+          </p>
+        </div>
+        <div
+          class="flex text-white flex-col h-[128px] w-[255px] items-center justify-center"
+        >
+          <p class="font-spartan text-[14px] leading-[25px]">AVERAGE TEMP.</p>
+          <p class="font-antonio text-[40px] leading-[52px] -tracking-[1.5]">
+            {planetData[0].temperature}
+          </p>
+        </div>
+     

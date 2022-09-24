@@ -1,38 +1,80 @@
 ---
-let {planetData} = Astro.props
-
+let { planetData } = Astro.props
 ---
 
-     <div class="flex flex-col h-[550px] w-[350px] text-white space-y-5">
-          <h1 class="text-7xl font-antonio mb-5 p-2">{planetData[0].name}</h1>
-          <p class="mb-5 font-spartan text-[14px] leading-[25px] p-2">
-           {planetData[0].overview.content}
-          </p>
-          <p class="my-5 mb-6 p-2">{planetData[0].overview.source}</p>
-          <div class="flex flex-col w-[350px] h-[175px] space-y-5">
-            <div
-              class="flex items-center border w-full h-[50px] p-2 active:bg-secondary-bg hover:bg-tertiary-bg space-x-6"
-            >
-              <p>01</p>
-              <p>OVERVIEW</p>
-            </div>
-            <div
-              class="flex items-center border w-full h-[50px] p-2 active:bg-secondary-bg hover:bg-tertiary-bg space-x-6"
-            >
-              <p>02</p>
-              <p>INTERNAL STRUCTURE</p>
-            </div>
-            <div
-            id='geology'
-              class="flex items-center border w-full h-[50px] p-2 active:bg-secondary-bg hover:bg-tertiary-bg space-x-6"
-            >
-              <p>03</p>
-              <p>SURFACE GEOLOGY</p>
-            </div>
-          </div>
-        </div>
+<script>
+  const overviewButton = document.getElementById('overview')
+  const internalButton = document.getElementById('internal')
+  const geologyButton = document.getElementById('geology')
 
-        <script>
-        
+  const planetImage = document.getElementById('planetImage')
+  const geologyImage = document.getElementById('geologyImage')
+  const internalImage = document.getElementById('internalImage')
 
-        </script>
+  overviewButton.addEventListener('click', () => {
+    internalImage.classList.add('hidden')
+    geologyImage.classList.add('hidden')
+    planetImage.classList.remove('hidden')
+  })
+
+   internalButton.addEventListener('click', () => {
+    planetImage.classList.add('hidden')
+    internalImage.classList.remove('hidden')
+  })
+
+   geologyButton.addEventListener('click', () => {
+    planetImage.classList.add('hidden')
+    internalImage.classList.remove('hidden')
+    geologyImage.classList.remove('hidden')
+  })
+
+</script>
+
+<div class='flex w-[650px] h-[550px] items-center justify-end'>
+  <img id='planetImage' class='' src={planetData[0].images.planet} alt='' />
+  <img
+    id='internalImage'
+    class='hidden'
+    src={planetData[0].images.internal}
+    alt=''
+  />
+  <img
+    id='geologyImage'
+    class='h-[100px] relative hidden top-60 -left-60'
+    src={planetData[0].images.geology}
+    alt=''
+  />
+</div>
+
+<div class='flex flex-col h-[550px] w-[350px] text-white space-y-5'>
+  <h1 class='text-7xl font-antonio mb-5 p-2'>{planetData[0].name}</h1>
+  <p class='mb-5 font-spartan text-[14px] leading-[25px] p-2'>
+    {planetData[0].overview.content}
+  </p>
+  <p class='my-5 mb-6 p-2'>{planetData[0].overview.source}</p>
+  <div class='flex flex-col w-[350px] h-[175px] space-y-5'>
+    <div
+      id='overview'
+      class='flex items-center border w-full h-[50px] p-2 active:bg-secondary-bg hover:bg-tertiary-bg space-x-6'
+    >
+      <p>01</p>
+      <p>OVERVIEW</p>
+    </div>
+    <div
+      id='internal'
+      class='flex items-center border w-full h-[50px] p-2 active:bg-secondary-bg hover:bg-tertiary-bg space-x-6'
+    >
+      <p>02</p>
+      <p>INTERNAL STRUCTURE</p>
+    </div>
+    <div
+      id='geology'
+      class='flex items-center border w-full h-[50px] p-2 active:bg-secondary-bg hover:bg-tertiary-bg space-x-6'
+    >
+      <p>03</p>
+      <p>SURFACE GEOLOGY</p>
+    </div>
+  </div>
+</div>
+
+<script></script>
